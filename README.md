@@ -11,6 +11,7 @@ docker-compose
 ### Installing
 
 For local testing, set your IP to jupyter.lab312.net in /etc/hosts
+
 ```
 192.168.1.1	jupyter.lab312.net
 ```
@@ -21,9 +22,9 @@ cd jupyter-proxy
 docker-compose up -d
 ```
 
-
 ### Testing
 
+```
 curl -k https://jupyter.lab312.net
 ```
 curl -SIXGET -k https://jupyter.lab312.net
@@ -31,7 +32,7 @@ curl -SIXGET -k https://jupyter.lab312.net
 openssl s_client -showcerts -connect jupyter.lab312.net:443
 ```
 https://www.sslshopper.com/ssl-checker.html#hostname=jupyter.lab312.net
-
+```
 
 ### Authors
 
