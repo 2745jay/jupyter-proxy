@@ -10,16 +10,15 @@ RUN \
 # Define mountable directories.
 VOLUME ["/etc/nginx/sites-enabled", "/etc/nginx/certs", "/etc/nginx/conf.d", "/var/log/nginx", "/var/www/html"]
 
-# Define existing configurations
-ADD /ssl /etc/ssl
-ADD nginx.conf /etc/nginx/nginx.conf
+# Define configurations.
+COPY ssl/ /etc/ssl/
+COPY nginx.conf /etc/nginx/nginx.conf
 
 # Define working directory.
 WORKDIR /etc/nginx
 
 # Define default command.
-CMD ["nginx"]
+CMD ["nginx", "-g", "daemon off;"]
 
 # Expose ports.
-EXPOSE 80
-EXPOSE 443
+EXPOSE 80 443
