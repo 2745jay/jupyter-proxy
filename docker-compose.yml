@@ -1,0 +1,14 @@
+application: 
+  image: jupyter/minimal-notebook
+  ports:
+    - 8888:8888
+proxy: 
+  image: 2745jay/jupyter-proxy
+  volumes: # mount custom config at runtime 
+    - ./nginx.conf:/etc/nginx/nginx.conf 
+    - ./ssl/:/etc/ssl/
+  links:
+    - application:jupyter-1 # "jupyter-1" is the hostname used in proxy_pass directive
+  ports: 
+    - 443:443
+    - 80:80
