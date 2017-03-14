@@ -3,12 +3,12 @@
 # ${1:jupyter-proxy}
 # Nginx Proxy using docker
 
-## Prerequisites
+### Prerequisites
 
 docker
 docker-compose
 
-## Installing
+### Installing
 
 For local testing, set your IP to jupyter.lab312.net in /etc/hosts
 ```
@@ -22,7 +22,7 @@ docker-compose up -d
 ```
 
 
-## Testing
+### Testing
 
 curl -k https://jupyter.lab312.net
 ```
@@ -33,7 +33,7 @@ openssl s_client -showcerts -connect jupyter.lab312.net:443
 https://www.sslshopper.com/ssl-checker.html#hostname=jupyter.lab312.net
 
 
-## Authors
+### Authors
 
 * **Jay Tischler** - *Docker work* 
 *  *Backend  work* - [Jupyter](https://github.com/jupyter/docker-stacks)
